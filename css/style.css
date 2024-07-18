@@ -250,6 +250,10 @@ section {
   gap: 10px;
 }
 
+.page p {
+  color: var(--text-gray_02);
+}
+
 
 /* bitrix */
 
@@ -344,10 +348,6 @@ h4 {
   font-weight: 500;
   line-height: 21.7px;
   color: var(--text);
-}
-
-.body_caption_2 {
-  color: var(--text-gray_02);
 }
 
 small {
@@ -2485,6 +2485,63 @@ html.has-scroll-dragging {
 
 /* end canwedo */
 
+/* start footer */
+
+.footer {
+  border-top: 1px dashed var(--border);
+}
+
+.footer__block {
+  padding: 35px 0 20px;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__wrap_link {
+  display: flex;
+  justify-content: space-between;
+  width: calc(50% - 10px);
+}
+
+.footer__nav_list {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 65px;
+  row-gap: 15px;
+}
+
+.btn__arrow_up {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: var(--bg-gray)
+}
+
+.btn__arrow_up:hover {
+  background-color: var(--color)
+}
+
+
+.footer__policy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 0;
+}
+
+.footer__policy p,
+.footer__policy a{
+  color: var(--text-gray_02)
+}
+
+/* end footer */
+
 /* start policy */
 
 .policy__container {
@@ -2611,6 +2668,10 @@ html.has-scroll-dragging {
     width: 60%;
   }
 
+  .footer__nav_list {
+    height: 115px;
+    column-gap: 125px;
+  }
   /* start policy */
 
   .policy__head {
@@ -2960,6 +3021,10 @@ html.has-scroll-dragging {
     margin: -100px 10px 0 auto;
   }
 
+  .footer__nav_list {
+    height: auto;
+  }
+
   /* start policy */
 
   .policy__block {
@@ -3227,6 +3292,34 @@ html.has-scroll-dragging {
   .history__navigation {
     margin: 0;
     justify-content: space-between;
+  }
+
+  .footer__block {
+    padding: 40px 0 20px;
+  }
+
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__wrap_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0 0;
+    gap: 30px;
+  }
+
+  .footer__nav_list {
+    align-items: center;
+  }
+
+  .footer__policy {
+    padding: 23px 0 0;
+    flex-direction: column;
+    gap: 10px;
   }
 
   /* start policy */
