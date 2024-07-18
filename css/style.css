@@ -2613,7 +2613,9 @@ html.has-scroll-dragging {
 
   /* start policy */
 
-    
+  .policy__head {
+    padding: 50px 10px 100px;
+  }
   
   /* end policy */
   
@@ -2960,7 +2962,30 @@ html.has-scroll-dragging {
 
   /* start policy */
 
+  .policy__block {
+    padding: 20px 0 80px;
+  }
 
+  .policy__head {
+    padding: 40px 10px 40px;
+  }
+
+  .policy__items {
+    gap: 40px;
+  }
+
+  .policy__item {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .policy__title {
+    width: 100%;
+  }
+
+  .policy__subtitle {
+    width: 100%;
+  }
   /* end policy */
 
 
@@ -3206,13 +3231,25 @@ html.has-scroll-dragging {
 
   /* start policy */
 
-
+  .policy__head {
+    padding: 40px 10px 20px;
+  }
 
   /* end policy */
   
     
 }
 /* end 767px */
+
+/* start 460px */
+@media (max-width: 460px) {
+  h1.policy__head {
+    font-size: 28px;
+    line-height: 38.62px;
+  }
+  
+}
+/* end 460px */
 
 
 /* start 390px */
