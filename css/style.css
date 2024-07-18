@@ -245,6 +245,12 @@ section {
   overflow: hidden;
 }
 
+.page {
+  display: flex;
+  gap: 10px;
+}
+
+
 /* bitrix */
 
 .container::after {
@@ -324,6 +330,10 @@ h4 {
   color: var(--text);
 }
 
+.body_two_2 {
+  color: var(--text-gray);
+}
+
 .body_small {
   font-family: var(--text-font);
   font-size: 16px;
@@ -338,6 +348,10 @@ h4 {
   font-weight: 500;
   line-height: 21.7px;
   color: var(--text);
+}
+
+.body_caption_2 {
+  color: var(--text-gray_02);
 }
 
 small {
@@ -2475,6 +2489,60 @@ html.has-scroll-dragging {
 
 /* end canwedo */
 
+/* start policy */
+
+.policy__container {
+  padding: 0 90px;
+}
+
+.policy__block {
+  padding: 30px 0 90px;
+}
+
+.policy__block .page {
+  padding: 0 10px;
+}
+
+.policy__head {
+  max-width: 1000px;
+  padding: 70px 10px 120px;
+}
+
+.policy__items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.policy__item {
+  display: flex;
+  gap: 10px;
+}
+
+.policy__title {
+  width: calc(50% - 10px);
+  height: fit-content;
+  padding: 0 10px;
+  position: relative;
+}
+
+.policy__title::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color);
+}
+
+.policy__subtitle {
+  width: calc(50% - 10px);
+  padding: 0 10px;
+}
+
+/* end policy */
+
 /* start 1919px */
 @media (max-width: 1919px) {
   .container {
@@ -2532,7 +2600,8 @@ html.has-scroll-dragging {
 
   .products_top__container,
   .advantages__container,
-  .canwedo__container {
+  .canwedo__container,
+  .policy__container  {
     padding: 0 60px;
   }
 
@@ -2544,6 +2613,14 @@ html.has-scroll-dragging {
     display: flex;
     width: 60%;
   }
+
+  /* start policy */
+
+    
+  
+  /* end policy */
+  
+    
 
 }
 /* end 1919px */
@@ -2605,7 +2682,8 @@ html.has-scroll-dragging {
 
   .products_top__container,
   .advantages__container,
-  .canwedo__container {
+  .canwedo__container,
+  .policy__container {
     padding: 0 20px;
   }
 
@@ -2871,15 +2949,24 @@ html.has-scroll-dragging {
   .history___slider {
     display: flex;
     width: 100%;
+    gap: 0;
   }
 
   .history__buttons {
-    top: 60%;
+    position: relative;
+    top: 33%;
   }
 
   .history__navigation {
-    margin: 0 10px 0 auto;
+    margin: -100px 10px 0 auto;
   }
+
+  /* start policy */
+
+
+  /* end policy */
+
+
 }
 /* end 1439px */
 
@@ -2946,7 +3033,8 @@ html.has-scroll-dragging {
 
   .products_top__container,
   .advantages__container,
-  .canwedo__container {
+  .canwedo__container,
+  .policy__container {
     padding: 0 10px;
   }
 
@@ -3084,6 +3172,27 @@ html.has-scroll-dragging {
     width: 100%;
   }
 
+  .canwedo__buttons {
+    width: auto;
+    margin: 0;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+
+  .canwedo__buttons::-webkit-scrollbar {
+    display: none; 
+    width: 0px; 
+  } 
+
+  .canwedo__buttons::-webkit-scrollbar-thumb {
+    display: none; 
+    width: 0px; 
+  }
+
+  .button {
+    padding: 8px 70px;
+  }
+
   .history__buttons {
     justify-content: center;
   }
@@ -3098,6 +3207,13 @@ html.has-scroll-dragging {
     justify-content: space-between;
   }
 
+  /* start policy */
+
+
+
+  /* end policy */
+  
+    
 }
 /* end 767px */
 
