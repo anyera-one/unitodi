@@ -330,10 +330,6 @@ h4 {
   color: var(--text);
 }
 
-.body_two_2 {
-  color: var(--text-gray);
-}
-
 .body_small {
   font-family: var(--text-font);
   font-size: 16px;
@@ -2539,6 +2535,7 @@ html.has-scroll-dragging {
 .policy__subtitle {
   width: calc(50% - 10px);
   padding: 0 10px;
+  color: var(--text-gray);
 }
 
 /* end policy */
