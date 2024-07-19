@@ -2969,7 +2969,7 @@ html.has-scroll-dragging {
 .form__label {
   width: max-content;
   min-height: 24px;
-  padding: 0 0 10px;
+  padding: 16px 0 10px;
   color: var(--text);
   -webkit-transform: translateY(0px);
   transform: translateY(0px);
@@ -3366,16 +3366,26 @@ html.has-scroll-dragging {
     height: 115px;
     column-gap: 125px;
   }
-  /* start policy */
 
+  /* start policy */
   .policy__head {
     padding: 50px 10px 100px;
   }
-  
   /* end policy */
-  
-    
 
+  .faq__block {
+    padding: 60px 0;
+  }
+
+  .faq__head {
+    padding: 0 0 24px;
+  }
+
+  .faq__desc {
+    padding: 0 0 60px;
+  }
+
+  
 }
 /* end 1919px */
 
@@ -3745,6 +3755,42 @@ html.has-scroll-dragging {
   }
   /* end policy */
 
+  .faq__flex {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .faq__left {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .faq__head {
+    padding: 0;
+  }
+
+  .faq__socials {
+    gap: 25px;
+  }
+
+  .faq__desc {
+    padding: 0 0 20px;
+  }
+
+  .faq__social {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+
+  .faq__right {
+    width: 100%;
+  }
+
+  .form__buttons .btn {
+    width: calc(100% - 50px);
+  }
+
 
 }
 /* end 1439px */
@@ -4022,6 +4068,42 @@ html.has-scroll-dragging {
 
   /* end policy */
   
+  .faq__block {
+    padding: 40px 0;
+  }
+
+  .faq__flex {
+    gap: 60px;
+  }
+
+  .form__control_flex {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form__control {
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  .faq__form .form__control {
+    width: calc(100%);
+  }
+
+  .form__label {
+    width: max-content;
+    min-height: 24px;
+    padding: 0 0 10px;
+  }
+
+  .form__buttons {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .form__buttons .btn {
+    width: 100%;
+  }
     
 }
 /* end 767px */
