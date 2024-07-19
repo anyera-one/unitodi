@@ -2488,6 +2488,9 @@ html.has-scroll-dragging {
 
 .footer {
   border-top: 1px dashed var(--border);
+  background-color: var(--bg);
+  position: relative;
+  z-index: 2;
 }
 
 .footer__block {
@@ -2519,11 +2522,13 @@ html.has-scroll-dragging {
   width: 40px;
   height: 40px;
   border-radius: 100%;
+  color: var(--text);
   background-color: var(--bg-gray)
 }
 
 .btn__arrow_up:hover {
-  background-color: var(--color)
+  color: var(--white);
+  background-color: var(--text)
 }
 
 
@@ -2595,6 +2600,7 @@ html.has-scroll-dragging {
 }
 
 /* end policy */
+
 /* start faq */
 
 .faq__block {
@@ -2763,7 +2769,7 @@ html.has-scroll-dragging {
 }
 
 .form__control.success .form__input {
-  border: 1px solid var(--green);
+  border: 1px solid transparent;
 }
 
 #personal__dateofbirth {
@@ -3346,7 +3352,6 @@ html.has-scroll-dragging {
   .policy__container  {
     padding: 0 60px;
   }
-<<<<<<< Updated upstream
 
   .history__flex{
     max-width: 80%;
@@ -3371,8 +3376,6 @@ html.has-scroll-dragging {
   
     
 
-=======
->>>>>>> Stashed changes
 }
 /* end 1919px */
 
@@ -3609,7 +3612,6 @@ html.has-scroll-dragging {
     width: 16px;
     height: 16px;
   }
-<<<<<<< Updated upstream
 
   .advantages__block {
     padding: 60px 0;
@@ -3744,8 +3746,6 @@ html.has-scroll-dragging {
   /* end policy */
 
 
-=======
->>>>>>> Stashed changes
 }
 /* end 1439px */
 
@@ -3928,7 +3928,6 @@ html.has-scroll-dragging {
     color: var(--text);
   }
 
-<<<<<<< Updated upstream
   .advantages__block {
     padding: 40px 0;
     gap: 30px;
@@ -3986,8 +3985,6 @@ html.has-scroll-dragging {
     margin: 0;
     justify-content: space-between;
   }
-=======
->>>>>>> Stashed changes
 
   .footer__block {
     padding: 40px 0 20px;
