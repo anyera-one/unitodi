@@ -299,7 +299,9 @@ if(heroSlider){
   } else {
     var herototalzero = '0';
   }
+  if(document.querySelector('.hero__total')) {
   document.querySelector('.hero__total').innerHTML = herototalzero + document.querySelector('.hero___wrapper').children.length;
+  }
 }
 // end hero___swiper
 
@@ -567,3 +569,69 @@ if (canwedoButtonOne && canwedoButtonTwo && canwedoButtonThree) {
   })
 }
 // end canwedo__information
+
+// start terminals__information
+const terminalsButton = document.querySelector('.terminals__button');
+const terminalsButtonActive = document.querySelectorAll(".terminals__buttons .terminals__button");
+const terminalsButtonOne = document.querySelector('.terminals__button_one');
+const terminalsButtonTwo = document.querySelector('.terminals__button_two');
+const terminalsButtonThree = document.querySelector('.terminals__button_three');
+const terminalsButtonFour = document.querySelector('.terminals__button_four');
+const terminalsButtonFive = document.querySelector('.terminals__button_five');
+
+const terminalsinformationActive = document.querySelectorAll(".terminals__informations .terminals__information");
+const terminalsinformationOne = document.querySelector('.terminals__information_one');
+const terminalsinformationTwo = document.querySelector('.terminals__information_two');
+const terminalsinformationThree = document.querySelector('.terminals__information_three');
+const terminalsinformationFour = document.querySelector('.terminals__information_four');
+const terminalsinformationFive = document.querySelector('.terminals__information_five');
+
+if (terminalsButtonOne && terminalsButtonTwo && terminalsButtonThree) {
+  console.log('kkk')
+  terminalsButtonOne.addEventListener('click', function() {
+    
+    if (!terminalsButtonOne.classList.contains("active")) {
+      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationOne.classList.add("active");
+      terminalsButtonOne.classList.add("active");
+    }
+  })
+  
+  terminalsButtonTwo.addEventListener('click', function() {
+    if (!terminalsButtonTwo.classList.contains("active")) {
+      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationTwo.classList.add("active");
+      terminalsButtonTwo.classList.add("active");
+    }
+  })
+  
+  terminalsButtonThree.addEventListener('click', function() {
+    if (!terminalsButtonThree.classList.contains("active")) {
+      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationThree.classList.add("active");
+      terminalsButtonThree.classList.add("active");
+    }
+  })
+  
+  terminalsButtonFour.addEventListener('click', function() {
+    if (!terminalsButtonFour.classList.contains("active")) {
+      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationFour.classList.add("active");
+      terminalsButtonFour.classList.add("active");
+    }
+  })
+
+  terminalsButtonFive.addEventListener('click', function() {
+    if (!terminalsButtonFive.classList.contains("active")) {
+      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
+      terminalsinformationFour.classList.add("active");
+      terminalsButtonFive.classList.add("active");
+    }
+  })
+}
+// end terminals__information
