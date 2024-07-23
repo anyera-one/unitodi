@@ -3597,7 +3597,7 @@ html.has-scroll-dragging {
 }
 
 .terminals__head {
-  width: 770px;
+  max-width: 770px;
   padding: 15px 0 0;
   text-align: center;
 }
@@ -3643,7 +3643,7 @@ html.has-scroll-dragging {
 }
 
 .terminals__box__head {
-  width: 710px;
+  max-width: 710px;
   margin: 15px 0 0;
 }
 
@@ -3669,6 +3669,7 @@ html.has-scroll-dragging {
 
 .terminals_item__img img{
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -3687,7 +3688,11 @@ html.has-scroll-dragging {
 }
 
 .terminals_item__desc {
-  padding: 40px 0;
+  margin: 40px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .terminals_video__top {
@@ -3695,6 +3700,10 @@ html.has-scroll-dragging {
   flex-wrap: wrap;
   gap: 20px;
   align-items: end;
+}
+
+.terminals_video__hea {
+  max-width: 700px;
 }
 
 .terminals_video {
@@ -3730,13 +3739,13 @@ html.has-scroll-dragging {
   width: calc(50% - 10px);
 }
 
-.terminals_video__icon_subtitle animate_left{
+.terminals_video__icon_subtitle{
   margin: 20px 0 0;
   padding: 0 10px;
   position: relative;
 }
 
-.terminals_video__icon_subtitle animate_left::before{
+.terminals_video__icon_subtitle::before{
   content: "";
   width: 1px;
   height: 100%;
@@ -3823,7 +3832,6 @@ html.has-scroll-dragging {
     line-height: 19.6px;
   }
 
-  
   .header__nav_left .header__nav_scroll {
     padding: 30px 10px;
   }
@@ -3885,6 +3893,32 @@ html.has-scroll-dragging {
   .footer__nav_list {
     height: 115px;
     column-gap: 125px;
+  }
+
+  .terminals__head {
+    max-width: 620px;
+    padding: 15px 0 0;
+  }
+  .terminals__informations {
+    padding: 10px 0;
+  }
+  .terminals__box {
+    padding: 40px 0;
+  }
+  .terminals__box__head {
+    max-width: 530px;
+  }
+  .terminals__items {
+    padding: 50px 0 0;
+  }
+  .terminals_item__info {
+    padding: 60px 54px 60px 10px;
+  }
+  .terminals_video__hea {
+    max-width: 530px;
+  }
+  .terminals_video {
+    padding: 40px 0 120px;
   }
 }
 /* end 1919px */
@@ -4550,6 +4584,68 @@ html.has-scroll-dragging {
   .footer__nav_list {
     height: auto;
   }
+
+  .terminals__block {
+    padding: 120px 0 0;
+  }
+  .terminals__img img {
+    width: 325px;
+  }
+  .terminals__buttons {
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .terminals__informations {
+    padding: 0;
+  }
+  .terminals__box_top {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .terminals__items {
+    gap: 25px;
+  }
+  .terminals_item__info {
+    padding: 30px 14px 50px 20px;
+  } 
+  .terminals_item__desc {
+    margin: 30px 0;
+    -webkit-line-clamp: 2;
+  }
+  .terminals__box {
+    padding: 30px 0;
+  }
+  .terminals_video {
+    padding: 30px 0 90px;
+  }
+  .terminals_video__top {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .terminals_video__left, .terminals_video__right {
+    width: 100%;
+  }
+  .terminals_video__hea {
+    max-width: 800px;
+    margin: 15px 0 0;
+  }
+  .terminals_video__bottom {
+    flex-direction: column;
+    align-items: baseline;
+    padding: 50px 0 0;
+  }
+  .terminals_video__icons {
+    width: 100%;
+    margin: 0 0 40px;
+  }
+  .terminals_video__img {
+    width: 100%;
+  }
+
 }
 /* end 1280px */
 
@@ -4900,6 +4996,71 @@ html.has-scroll-dragging {
     padding: 23px 0 0;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .terminals__img img {
+    width: 350px;
+  }
+  .terminals__block {
+    padding: 40px 0 0;
+  }
+  .terminals__head {
+    max-width: 350px;
+  }
+  .terminals__buttons {
+    padding:  40px 0;
+  }
+  .terminals__items {
+    padding: 35px 0 0;
+  }
+  .terminals_item {
+    flex-direction: column;
+  }
+  .terminals_item__img {
+    width: 100%;
+  }
+  .terminals_item__info {
+    width: 100%;
+    padding: 14px 20px 34px;
+  }
+  .terminals_item__info .btn {
+    width: 100%;
+  }
+  .terminals__box {
+    padding: 10px 0 50px;
+  }
+  .terminals__buttons::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+  } 
+  
+  .terminals__buttons::-webkit-scrollbar-thumb {
+    display: none;
+    width: 0px;
+  }
+  .terminals__buttons {
+    width: 100%;
+    display: flex;
+    /* margin: 0; */
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+  .terminals_video {
+    padding: 10px 0 50px;
+  }
+  .terminals_video__hea {
+    margin: 10px 0 0;
+  }
+  .terminals_video__bottom {
+    padding: 30px 0 0;
+  }
+  .terminals_video__icons {
+    margin: 0 0 30px;
+    gap: 30px 10px;
+  }
+  .terminals_video__icon_subtitle {
+    margin: 6px 0 0;
   }
 }
 /* end 767px */
