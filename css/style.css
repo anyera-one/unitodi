@@ -259,7 +259,7 @@ section {
 }
 
 .page p {
-  color: var(--text-gray);
+  color: var(--text-lgray);
 }
 
 
@@ -3728,24 +3728,24 @@ html.has-scroll-dragging {
   padding: 60px 0 0 ;
 }
 
-.terminals_video__icons{
+.terminals_icons{
   width: 50%;
   display: flex;
   flex-wrap: wrap;
   gap: 40px 10px;
 }
 
-.terminals_video__icon {
+.terminals_icon {
   width: calc(50% - 10px);
 }
 
-.terminals_video__icon_subtitle{
+.terminals_icon__subtitle{
   margin: 20px 0 0;
   padding: 0 10px;
   position: relative;
 }
 
-.terminals_video__icon_subtitle::before{
+.terminals_icon__subtitle::before{
   content: "";
   width: 1px;
   height: 100%;
@@ -3755,7 +3755,7 @@ html.has-scroll-dragging {
   background-color: var(--color);
 }
 
-.terminals_video__svg {
+.terminals_icon__svg {
   padding: 0 10px;
 }
 
@@ -3768,7 +3768,7 @@ html.has-scroll-dragging {
   width: 100%;
 }
 
-.terminals_video__pause {
+.terminals_pause {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3776,6 +3776,98 @@ html.has-scroll-dragging {
   -webkit-transform: translate( -50%, -50%);
 }
 /* end terminals */
+
+/* start terminal_card */
+
+.terminal_card__container{
+  padding: 0 90px;
+}
+
+.terminal_card__block {
+  position: relative;
+  z-index: 4;
+  padding: 0 0 80px;
+}
+
+.terminal_card__top {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 70px;
+}
+
+.terminal_card__left {
+  width: 50%;
+  padding: 0 10px;
+}
+
+.terminal_card__head {
+  max-width: 650px;
+  margin: 15px 0 20px;
+}
+
+.terminal_card__text {
+  max-width: 700px;
+}
+
+.terminal_card__img {
+  position: relative;
+}
+
+.terminal_card__img img{
+  width: 100%;
+  object-fit: cover;
+}
+
+/* end terminal_card */
+
+/* start terminal_characteristic */
+
+.terminal_characteristic {
+  background-color: var(--bg-gray);
+}
+
+.terminal_characteristic__container {
+  padding: 0 90px;
+}
+
+.terminal_characteristic__block {
+  position: relative;
+  z-index: 4;
+  padding: 80px 0;
+}
+
+.terminal_characteristic__top {
+  max-width: 1050px;
+  padding: 0 10px;
+}
+
+.terminal_characteristic__name {
+  margin: 0 0 15px;
+}
+
+.terminal_characteristic__head { 
+  margin: 0 0 60px;
+}
+
+.terminal_characteristic__icons {
+  width: 100%;
+  gap: 40px 0;
+}
+
+.terminal_characteristic__icon {
+  width: 25%;
+}
+
+.terminals_icon__text {
+  padding: 10px 10px;
+}
+
+.terminal_characteristic__icon
+.terminals_icon__subtitle {
+  margin: 10px 0 0;
+}
+
+/* end terminal_characteristic */
 
 /* start 1919px */
 @media (max-width: 1919px) {
@@ -4638,7 +4730,7 @@ html.has-scroll-dragging {
     align-items: baseline;
     padding: 50px 0 0;
   }
-  .terminals_video__icons {
+  .terminals_icons {
     width: 100%;
     margin: 0 0 40px;
   }
@@ -5055,11 +5147,11 @@ html.has-scroll-dragging {
   .terminals_video__bottom {
     padding: 30px 0 0;
   }
-  .terminals_video__icons {
+  .terminals_icons {
     margin: 0 0 30px;
     gap: 30px 10px;
   }
-  .terminals_video__icon_subtitle {
+  .terminals_icon__subtitle {
     margin: 6px 0 0;
   }
 }
