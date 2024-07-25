@@ -1,5 +1,5 @@
-import * as THREE from './three.module.js';
-import { OrbitControls } from './OrbitControls.js';
+import * as THREE from '../js/three.module.js';
+import { OrbitControls } from '../js/OrbitControls.js';
 
 const containerEl = document.querySelector(".globe-wrapper");
 const canvas3D = containerEl.querySelector("#globe-3d");
@@ -26,7 +26,7 @@ function initScene() {
   clock = new THREE.Clock();
 
   new THREE.TextureLoader().load(
-  "../img/globe/map.png",
+  "img/globe/map.png",
   (mapTex) => {
     createGlobe(mapTex);
     addCanvasEvents();
