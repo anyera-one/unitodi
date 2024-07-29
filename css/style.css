@@ -7,6 +7,7 @@
   --y: 0px;
   --relx: 0px;
   --rely: 0px;
+  --size: 400px;
   --title-font: "Montserrat", sans-serif;
   --text-font: "Montserrat", sans-serif;
   --bg: #fff;
@@ -3597,6 +3598,8 @@ html.has-scroll-dragging {
   display: flex;
   padding: 80px 0;
   gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .globes__left {
@@ -3639,31 +3642,34 @@ html.has-scroll-dragging {
 }
 
 .globes__right {
+  display: flex;
   width: calc(50% - 10px);
 	margin: 0 0 30px;
+  justify-content: flex-end;
   position: relative;
 }
 
 .globe {
-	display: block;
-	width: 500px;
-	height: 500px;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
   border-radius: 50%;
+  position: relative;
+  background-color: var(--purple);
   background: linear-gradient(124.92deg, #F57A78 7%, #F94F63 25.1%, #B73CB7 50.03%, #7B5BDD 87.11%);
   background-size: 400% 400%;
-  -webkit-animation: gradient-back 5s ease infinite;
-  animation: gradient-back 5s ease infinite;
+  -webkit-animation: gradient-back 15s ease infinite;
+  animation: gradient-back 15s ease infinite;
 }
 
-/* .globe__map,
-.globe__front,
-.globe__back, */
-.globe__sphere,
+.globe__earth {
+  width: 130%;
+  height: 130%;
+  position: relative;
+  top: -15%;
+  left: -15%;
+}
+
 .globe__shadow,
 .globe__shadow_map {
 	display: block;
@@ -3671,48 +3677,21 @@ html.has-scroll-dragging {
 	position: absolute;
 }
 
-.globe__sphere,
 .globe__shadow,
 .globe__shadow_map {
-	width: 100%;
-	height: 100%;
+	width: var(--size);
+	height: var(--size);
 	left: 0;
 	top: 0;
 	background-position: 0 0;
 	background-repeat: no-repeat;
 }
 
-/* .globe__map {
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	border-radius: 50%;
-  background-color: var(--purple);
-  background: linear-gradient(124.92deg, #F57A78 7%, #F94F63 25.1%, #B73CB7 50.03%, #7B5BDD 87.11%);
-  background-size: 400% 400%;
-  -webkit-animation: gradient-back 5s ease infinite;
-  animation: gradient-back 5s ease infinite;
-	overflow: hidden;
-} */
-
-/* .globe__front,
-.globe__back {
-	width: 500%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	overflow: visible;
-	background-image: url('../img/globe/globe_map.svg');
-	background-repeat: no-repeat;
-  background-size: 100%;
-} */
-
 .globe__shadow {
 	width: 200px;
 	height: 30px;
-	left: 50%;
-	top: calc(100% - 15px);
+	left: calc(var(--size)/2);
+	top: calc(100% - 13px);
 	background-image: url('../img/globe/globe_shadow.svg');
   background-size: 100%;
   -webkit-transform: translateX(-50%);
@@ -3722,87 +3701,6 @@ html.has-scroll-dragging {
 .globe__shadow_map { 
 	background-image: url('../img/globe/globe_shadow_map.svg');
   background-size: 100%;
-}
-
-/* .globe__front { 
-	background-position: 0px 0px;
-	-webkit-animation: textureSpinreverse 20s linear infinite;
-	animation: textureSpinreverse 20s linear infinite;
-} */
-
-/* .globe__back { 
-	background-position: 0px calc(100% - 20px);
-  -webkit-animation: textureSpin 20s linear infinite;
-  animation: textureSpin 20s linear infinite;
-} */
-
-.globe__dots {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.globe__dot {
-  display: none;
-  color: var(--purple);
-  fill: var(--purple);
-  opacity: 0;
-}
-
-.globe-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-}
-
-#globe-3d {
-  transform: scale(1.15);
-}
-
-@-webkit-keyframes textureSpin {
-	from {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-	to {
-    -webkit-transform: translateX(-47.2%);
-    transform: translateX(-47.2%);
-	}
-}
-
-@keyframes textureSpin {
-	from {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-	to {
-    -webkit-transform: translateX(-47.2%);
-    transform: translateX(-47.2%);
-	}
-}
-
-@-webkit-keyframes textureSpinreverse {
-	from {
-    -webkit-transform: translateX(-47.2%);
-    transform: translateX(-47.2%);
-	}
-	to {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-}
-
-@keyframes textureSpinreverse {
-	from {
-    -webkit-transform: translateX(-47.2%);
-    transform: translateX(-47.2%);
-	}
-	to {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
 }
 
 /* end globe */
