@@ -2448,6 +2448,7 @@ html.has-scroll-dragging {
 }
 
 .canwedo__description {
+  max-width: 705px;
   padding: 0 10px;
 }
 
@@ -2566,6 +2567,7 @@ html.has-scroll-dragging {
 }
 
 .history__desc {
+  max-width: 705px;
   padding: 25px 0 0;
   color: var(--text-gray);
 }
@@ -2842,6 +2844,10 @@ html.has-scroll-dragging {
 .footer__policy p,
 .footer__policy a{
   color: var(--text-gray)
+}
+
+.footer__policy a:hover {
+  color: var(--color);
 }
 
 /* end footer */
@@ -3423,6 +3429,7 @@ html.has-scroll-dragging {
 .form__buttons {
   display: flex;
   width: 100%;
+  padding: 30px 0 0;
   margin: 0 0 0 auto;
   gap: 40px;
 }
@@ -3669,7 +3676,7 @@ html.has-scroll-dragging {
 
 .globes__block {
   display: flex;
-  padding: 80px 0;
+  padding: 0 0 80px;
   gap: 20px;
   position: relative;
   z-index: 2;
@@ -3678,7 +3685,7 @@ html.has-scroll-dragging {
 .globes__left {
   display: flex;
   width: calc(50% - 10px);
-  padding: 300px 0 0;
+  padding: 380px 0 0;
   flex-direction: column;
   gap: 130px;
 }
@@ -3718,7 +3725,7 @@ html.has-scroll-dragging {
 .globes__right {
   display: flex;
   width: calc(50% - 10px);
-  padding: 300px 0 0;
+  padding: 380px 0 0;
 	margin: 0 0 30px;
   justify-content: flex-end;
   position: relative;
@@ -4400,14 +4407,15 @@ html.has-scroll-dragging {
   .history__buttons {
     width: calc(60% - 10px);
   }
+  .history__desc {
+    max-width: 530px;
+  }
 
   .canwedo__buttons {
     gap: 10px 20px;
   }
-
-  .footer__nav_list {
-    height: 115px;
-    column-gap: 125px;
+  .canwedo__description {
+    max-width: 530px;
   }
 
   .terminals__head {
@@ -4460,6 +4468,11 @@ html.has-scroll-dragging {
   
   .globes__left {
     gap: 90px;
+  }
+
+  .footer__nav_list {
+    height: 115px;
+    column-gap: 125px;
   }
 }
 /* end 1919px */
@@ -5074,6 +5087,9 @@ html.has-scroll-dragging {
     padding: 0 10px; 
     margin: 0;
   }
+  .canwedo__description {
+    max-width: 100%;
+  }
 
   .history__block {
     margin: 60px 0;
@@ -5096,6 +5112,9 @@ html.has-scroll-dragging {
   }
   .history__navigation {
     margin: -100px 10px 0 auto;
+  }
+  .history__desc {
+    max-width: 100%;
   }
 
   .policy__block {
@@ -5231,7 +5250,7 @@ html.has-scroll-dragging {
   }
   
   .globes__block {
-    padding: 60px 0 0;
+    padding: 0 0 60px;
     flex-direction: column-reverse;
   }
   .globes__right {
@@ -5698,7 +5717,10 @@ html.has-scroll-dragging {
     margin: 0 0 30px;
     gap: 30px 0;
   }
-
+  
+  .globes__block {
+    padding: 0 0 40px;
+  }
   .globes__back_line:nth-child(1),
   .globes__back_line:nth-child(2) {
     height: 40px;
