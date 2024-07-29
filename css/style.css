@@ -1277,6 +1277,8 @@ html.has-scroll-dragging {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  position: relative;
+  z-index: 20;
 }
 
 .header__navigation {
@@ -2787,7 +2789,7 @@ html.has-scroll-dragging {
 .footer__block {
   padding: 35px 0 20px;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .footer__top {
@@ -4075,6 +4077,123 @@ html.has-scroll-dragging {
 }
 
 /* end terminal_characteristic */
+
+/* start vacancies */
+
+
+.hero__vacancies .hero__block {
+  padding: 50px 0 0;
+}
+.hero__vacancies .hero__info {
+  width: 40%;
+}
+
+.hero__vacancies .hero__desc{
+  color: var(--text-gray)
+}
+
+.hero__vacancies .hero__back_line:nth-child(3)::before,
+.hero__vacancies .hero__back_line:nth-child(2)::before {
+  display: none;
+}
+
+.hero__vacancies .hero__back_line:nth-child(2) {
+  bottom: 350px;
+}
+
+.hero__vacancies .hero__back_line:nth-child(3) {
+  bottom: 280px;
+}
+
+.hero__vacancies .hero__back_line:nth-child(1) {
+  bottom: 210px;
+}
+
+.hero__vacancies .hero__back_line:nth-child(1)::before {
+  left: 68%;
+}
+
+.hero_vacancies__images {
+  width: 60%;
+  padding: 25px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hero_vacancies__img:nth-child(1n) {
+  width: calc(55% - 10px);
+  padding: 0 0 0 55px;
+}
+
+.hero_vacancies__img:nth-child(2n) {
+  width: calc(45% - 10px);
+  padding: 55px 0 0 0;
+}
+
+.hero_vacancies__img:nth-child(3n) {
+  width: calc(60% - 10px);
+  padding: 0 0 105px 0;
+}
+
+.hero_vacancies__img:nth-child(4n) {
+  width: calc(40% - 10px);
+  /* height: 100%; */
+  padding: 0 30px 0 0;
+}
+
+.hero_vacancies__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vacancies__block{
+  position: relative;
+  z-index: 4;
+}
+
+.vacancies__container {
+  padding: 0 90px;
+}
+
+.vacancies_top {
+  display: flex;
+  padding: 80px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: end;
+}
+
+.terminals_top__left,
+.terminals_top__right {
+  width: calc(50% - 10px);
+}
+
+.terminals_top__left {
+  display: flex;
+  padding: 0 0 0 10px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.terminals_top__text {
+  color: var(--text-gray)
+}
+
+.vacancies__block .terminals_icons{
+  width: 100%;
+  padding: 60px 0;
+}
+
+.vacancies__block .terminals_icon {
+  width: calc(25% - 10px);
+}
+.vacancies__block .terminals_icon__subtitle {
+  margin: 20px 0 15px
+}
+
+/* end vacancies */
 
 /* start 1919px */
 @media (max-width: 1919px) {
