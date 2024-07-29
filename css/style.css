@@ -5472,7 +5472,7 @@ html.has-scroll-dragging {
   .footer__wrap_link {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     width: 100%;
     padding: 40px 0 0;
     gap: 30px;
