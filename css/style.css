@@ -3996,6 +3996,10 @@ html.has-scroll-dragging {
   gap: 20px;
 }
 
+.hero_vacancies__img img {
+  border-radius: 4px;
+}
+
 .hero_vacancies__img:nth-child(1n) {
   width: calc(55% - 10px);
   padding: 0 0 0 55px;
@@ -4013,7 +4017,6 @@ html.has-scroll-dragging {
 
 .hero_vacancies__img:nth-child(4n) {
   width: calc(40% - 10px);
-  /* height: 100%; */
   padding: 0 30px 0 0;
 }
 
@@ -4023,12 +4026,13 @@ html.has-scroll-dragging {
   object-fit: cover;
 }
 
-.vacancies__block{
+.vacancies__block,
+.vacanc_info__block{
   position: relative;
   z-index: 4;
 }
 
-.vacancies__container {
+.vacancies__container{
   padding: 0 90px;
 }
 
@@ -4045,6 +4049,12 @@ html.has-scroll-dragging {
   width: calc(50% - 10px);
 }
 
+.vacancies_top .terminals_icon__text{
+  color: var(--text-gray)
+}
+.vacancies_top .terminals_top__text {
+  padding: 0 10px 0 0;
+}
 .terminals_top__left {
   display: flex;
   padding: 0 0 0 10px;
@@ -4058,7 +4068,7 @@ html.has-scroll-dragging {
 
 .vacancies__block .terminals_icons{
   width: 100%;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .vacancies__block .terminals_icon {
@@ -4071,6 +4081,117 @@ html.has-scroll-dragging {
 
 .vacancies__img img {
   width: 100%;
+}
+
+.vacanc_info {
+  background-color: var(--bg-gray);
+}
+
+.vacanc_info__container {
+  padding: 0 92px;
+}
+
+.vacanc_info__block {
+  padding: 80px 0;
+}
+
+.vacanc_info__title_wrapper {
+  max-width: 700px;
+  padding: 0 0 60px 10px;
+}
+
+.vacanc_info__item_name{
+  width: 15%;
+}
+
+.vacanc_info__subtitle {
+  padding: 20px 0 0;
+  color: var(--text-gray)
+}
+
+.vacanc_info__wrapper {
+  background-color: var(--bg);
+  border-top: 1px solid var(--border)
+}
+
+.vacanc_info__item {
+  height: auto;
+  padding: 0 24px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.vacanc_info__item_top {
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.vacanc_info__item_place {
+  display: flex;
+  gap: 60px;
+}
+
+.vacanc_info__item_descr {
+  max-width: 820px;
+  max-height: 0;
+  opacity: 0;
+  -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+  transition: max-height 0.3s linear, opacity 0.3s linear;
+  overflow: hidden;
+}
+
+.vacanc_info__item.active .vacanc_info__item_descr {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.vacanc_info__item_text{
+  padding: 50px 0 70px;
+}
+
+.vacanc_info__item_descr .small {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.8px;
+  text-align: left;
+  color: var(--text-gray)
+}
+
+.vacanc_info__item_descr .sub_two {
+  margin: 20px 0 10px;
+}
+
+.vacanc_info__item_descr ul  li{
+  padding: 0 0 0 20px;
+  position: relative;
+}
+
+.vacanc_info__item_icon {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.vacanc_info__item.active .vacanc_info__item_icon {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.vacanc_info__item_descr ul  li::before{
+  content: "";
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  background-color: var(--text-gray);
+}
+
+.vacanc_info__btn{
+  margin: 50px 0 0;
 }
 
 /* end vacancies */
@@ -4226,6 +4347,7 @@ html.has-scroll-dragging {
     bottom: 60px;
   }
 
+
   .products_top__container,
   .advantages__container,
   .canwedo__container,
@@ -4234,7 +4356,8 @@ html.has-scroll-dragging {
   .terminal_card__container,
   .terminal_characteristic__container,
   .vacancies__container,
-  .globes__container {
+  .globes__container,
+  .vacanc_info__container {
     padding: 0 60px;
   }
 
@@ -4243,7 +4366,9 @@ html.has-scroll-dragging {
   .canwedo__block,
   .faq__block,
   .terminal_card__block,
-  .terminal_characteristic__block {
+  .terminal_characteristic__block,
+  .vacancies_top,
+  .vacanc_info__block {
     padding: 60px 0;
   }
 
@@ -4393,6 +4518,60 @@ html.has-scroll-dragging {
     height: 115px;
     column-gap: 125px;
   }
+
+  .hero__vacancies .hero__block {
+    padding: 15px 0 0;
+  }
+  .hero__vacancies .hero__back_line:nth-child(1) {
+    bottom: 165px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(2) {
+    bottom: 165px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(3) {
+    bottom: 105px;
+  }
+  .hero__vacancies .hero__desc {
+    width: 560px;
+  }
+  .hero__vacancies .hero__info {
+    width: 48%;
+  }
+  .hero_vacancies__images {
+    width: 52%;
+  }
+  .hero_vacancies__img:nth-child(1n) {
+    padding: 0 0 0 30px;
+  }
+  .hero_vacancies__img:nth-child(2n) {
+    padding: 35px 0 0 0;
+  }
+  .hero_vacancies__img:nth-child(3n) {
+    padding: 0 0 70px 0;
+  }
+  .hero_vacancies__img:nth-child(4n) {
+    padding: 0 20px 0 0 ;
+  }
+  .vacancies__block .terminals_icon__subtitle {
+    margin: 15px 0 5px;
+  }
+  .vacanc_info__item_top {
+    height: 60px;
+  }
+  .vacanc_info__item_text {
+    padding: 30px 0 50px;
+  }
+  .vacanc_info__title_wrapper {
+    max-width: 100%;
+    padding: 0 0 40px 10px;
+  }
+  .vacanc_info__item_name {
+    width: 25%;
+  }
+  .vacanc_info__item_text {
+    padding: 20px 0 50px;
+  }
+  
 }
 /* end 1919px */
 
@@ -4459,7 +4638,8 @@ html.has-scroll-dragging {
   .terminal_card__container,
   .terminal_characteristic__container,
   .vacancies__container,
-  .globes__container {
+  .globes__container,
+  .vacanc_info__container {
     padding: 0 20px;
   }
 }
@@ -4605,6 +4785,7 @@ html.has-scroll-dragging {
   .footer__policy a:hover {
     color: var(--color);
   }
+
 }
 /* end min 1280px */
 
@@ -4660,6 +4841,10 @@ html.has-scroll-dragging {
   .border::before,
   .border::after {
     display: none;
+  }
+
+  .btn.btn__primary {
+    padding: 15px 45px;
   }
 
   .header {
@@ -4999,7 +5184,7 @@ html.has-scroll-dragging {
   }
   .hero__info {
     width: 580px;
-    padding: 40 0 40px;
+    padding: 40px 0 40px;
     flex-direction: column;
     gap: 20px;
   }
@@ -5334,6 +5519,75 @@ html.has-scroll-dragging {
   .globes__back_line:nth-child(2) {
     top: 101px;
   }
+
+  .hero__vacancies .hero__block {
+    padding: 15px 0 200px;
+  }
+  .hero__vacancies .hero__back::before {
+    bottom: calc(-100vh + 180px);
+  }
+  .hero__vacancies .hero__back_line:nth-child(2) {
+    bottom: 175px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(1),
+  .hero__vacancies .hero__back_line:nth-child(2),
+  .hero__vacancies .hero__back_line:nth-child(3) {
+    width: 165%;
+    height: 70px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(2)::after {
+    width: 25%;
+  }
+  .hero__vacancies .hero__back_line:nth-child(3)::after {
+    width: 17%;
+  }
+  .hero__vacancies .hero__back_line:nth-child(1) {
+    bottom: 110px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(1)::before {
+    width: 25%;
+  }
+  .hero__vacancies .hero__info {
+    width: 100%;
+  }
+  .hero__vacancies .hero__desc {
+    width: 100%;
+  }
+  .hero_vacancies__images {
+    width: calc(100% + 20px);
+    margin: 0 -10px;
+    padding: 20px 0 0;
+  }
+  .hero_vacancies__img:nth-child(1n) {
+    padding: 0 0 0 10px;
+  }
+  .hero_vacancies__img:nth-child(2n) {
+    padding: 35px 0 0 0;
+  }
+  .hero_vacancies__img:nth-child(3n) {
+    padding: 0 0 70px 0;
+  }
+  .hero_vacancies__img:nth-child(4n) {
+    padding: 0 30px 0 0;
+  }
+  .vacancies_top {
+    padding: 0 0 60px;
+  }
+  .vacancies_top .terminals_top__left, 
+  .vacancies_top .terminals_top__right {
+    width: 100%;
+  }
+  .vacancies_top .terminals_top__text {
+    padding: 10px ;
+  }
+  .vacancies__block .terminals_icons {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .vacancies__block .terminals_icon {
+    width: calc(50% - 10px);
+  }
+
 }
 /* end 1280px */
 
@@ -5788,6 +6042,102 @@ html.has-scroll-dragging {
   .globes__right {
     height: 300px;
   }
+
+
+  .hero__vacancies .hero__back_line:nth-child(1), 
+  .hero__vacancies .hero__back_line:nth-child(2), 
+  .hero__vacancies .hero__back_line:nth-child(3) {
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+  }
+  .hero__vacancies .hero__back_line:nth-child(1)::before {
+    width: 35%;
+  }
+  .hero__vacancies .hero__back_line:nth-child(3) {
+    bottom: 320px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(2) {
+    bottom: 235px;
+  }
+  .hero__vacancies .hero__back::before {
+    bottom: calc(-100vh + 630px);
+  }
+  .hero__vacancies .hero__back_line:nth-child(1) {
+    bottom: 320px;
+  }
+  .hero__vacancies .hero__back_line:nth-child(3) {
+    bottom: 310px;
+  }
+  .hero__vacancies .hero__block {
+    padding: 0 0 40px;
+  }
+  .vacancies_top {
+    padding: 40px 0;
+  }
+  .hero_vacancies__images {
+    padding: 10px 0 0;
+    gap: 10px;
+  }
+  .hero_vacancies__img:nth-child(1n) {
+    width: 100%;
+    padding: 0 10px;
+    order: 1;
+  }
+  .hero_vacancies__img:nth-child(2n) {
+    width: 100%;
+    padding: 0 10px 0 40px;
+    order: 3;
+  }
+  .hero_vacancies__img:nth-child(3n) {
+    display: none;
+  }
+  .hero_vacancies__img:nth-child(4n) {
+    padding: 0 120px 0 10px;
+    height: 240px;
+    order: 2;
+  }
+  .vacancies__block .terminals_icon {
+    width: 100%
+  }
+  .vacancies__block  .terminals_icons {
+    margin: 0
+  }
+  .vacanc_info__container {
+    padding: 0 10px;
+  }
+  .vacanc_info__block {
+    padding: 40px 0;
+  }
+  .vacanc_info__title_wrapper {
+    padding: 0 0 20px 10px;
+  } 
+  .vacanc_info__item {
+    padding: 0 20px;
+  }
+  .vacanc_info__item_top {
+    height: 100px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .vacanc_info__item_name{
+    height: 50%;
+    width: 80%;
+    /* order: 1; */
+  }
+  .vacanc_info__item_icon {
+    height: 75%;
+    
+    /* order: 2 */
+  }
+  .vacanc_info__item_place {
+    height: 50%;
+    gap: 20px;
+    /* order: 3; */
+  }
+
+  
 }
 /* end 767px */
 

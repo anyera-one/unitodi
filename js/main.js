@@ -831,3 +831,35 @@ if (terminalsButtonOne && terminalsButtonTwo && terminalsButtonThree) {
   })
 }
 // end terminals__information
+
+// start vacancies
+if(document.querySelector('.vacanc_info__item')) {
+  var vacanciesitem = document.getElementsByClassName("vacanc_info__item");
+  var i;
+  
+  for (i = 0; i < vacanciesitem.length; i++) {
+    vacanciesitem[i].onclick = function(e) {
+      var vacanciesitemNext = this.children[1];
+      var vacanciesitembottom = document.getElementsByClassName("vacanc_info__item_descr");
+      var vacanciesitemActive = document.getElementsByClassName("vacanc_info__item active");
+      console.log('ccc')
+      if (vacanciesitemNext.style.maxHeight) {
+        vacanciesitemNext.style.maxHeight = null;
+        this.classList.remove("active");
+      } else {
+        for (var q = 0; q < vacanciesitemActive.length; q++) {
+          vacanciesitemActive[q].classList.remove("active");
+          vacanciesitembottom[q].classList.remove("active");
+        }
+        for (var p = 0; p < vacanciesitembottom.length; p++) {
+          this.classList.remove("active");
+          vacanciesitembottom[p].classList.remove("active");
+          vacanciesitembottom[p].style.maxHeight = null;
+        }
+        vacanciesitemNext.style.maxHeight = vacanciesitemNext.scrollHeight + "px";
+        this.classList.add("active");
+      }
+    };
+  }
+}
+// end vacancies
