@@ -5788,7 +5788,10 @@ html.has-scroll-dragging {
   .vacancies__block .terminals_icon {
     width: calc(50% - 10px);
   }
-
+  
+  .hero__circles {
+    display: none;
+  }
 }
 /* end 1280px */
 

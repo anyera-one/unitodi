@@ -872,13 +872,15 @@ if (document.querySelector('.hero__circle')) {
   
   const herocirclesMouse = document.querySelector(".hero__circles");
   window.addEventListener('mousemove', function(e) {
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
-    if(herocirclesMouse.children[0]){herocirclesMouse.children[0].style.transform = 'translate(-' + x * 5 + 'px, -' + y * 10 + 'px)'};
-    if(herocirclesMouse.children[1]){herocirclesMouse.children[1].style.transform = 'translate(-' + x * 15 + 'px, -' + y * 7 + 'px)'};
-    if(herocirclesMouse.children[2]){herocirclesMouse.children[2].style.transform = 'translate(-' + x * 3 + 'px, -' + y * 12 + 'px)'};
-    if(herocirclesMouse.children[3]){herocirclesMouse.children[3].style.transform = 'translate(-' + x * 17 + 'px, -' + y * 8 + 'px)'};
-    if(herocirclesMouse.children[4]){herocirclesMouse.children[4].style.transform = 'translate(-' + x * 14 + 'px, -' + y * 4 + 'px)'};
+    if (window.innerWidth > 1280) {
+      let x = e.clientX / window.innerWidth;
+      let y = e.clientY / window.innerHeight;
+      if(herocirclesMouse.children[0]){herocirclesMouse.children[0].style.transform = 'translate(-' + x * 5 + 'px, -' + y * 10 + 'px)'};
+      if(herocirclesMouse.children[1]){herocirclesMouse.children[1].style.transform = 'translate(-' + x * 15 + 'px, -' + y * 7 + 'px)'};
+      if(herocirclesMouse.children[2]){herocirclesMouse.children[2].style.transform = 'translate(-' + x * 3 + 'px, -' + y * 12 + 'px)'};
+      if(herocirclesMouse.children[3]){herocirclesMouse.children[3].style.transform = 'translate(-' + x * 17 + 'px, -' + y * 8 + 'px)'};
+      if(herocirclesMouse.children[4]){herocirclesMouse.children[4].style.transform = 'translate(-' + x * 14 + 'px, -' + y * 4 + 'px)'};
+    }
   });
 }
 // end hero__circle
