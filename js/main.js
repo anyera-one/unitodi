@@ -7,7 +7,9 @@ const appHeight = () => {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
     docheight.style.setProperty('--height', `${window.innerHeight}px`);
-    document.querySelector('.history__rotate').style.height = document.querySelector('.history__rotate').clientWidth + 'px';
+    if (document.querySelector('.history__rotate')) {
+      document.querySelector('.history__rotate').style.height = document.querySelector('.history__rotate').clientWidth + 'px';
+    }
   }
   oldWidth = window.innerWidth;
 }
@@ -342,6 +344,7 @@ if(headerPopup){
     burger.classList.remove("active");
     header.classList.remove("active");
     headerClose.classList.remove("active");
+    document.documentElement.classList.remove("noscroll");
     scroll.start();
   })
 
@@ -430,6 +433,7 @@ headerClose.addEventListener('click', function() {
   burger.classList.remove("active");
   header.classList.remove("active");
   headerClose.classList.remove("active");
+  document.documentElement.classList.remove("noscroll");
   scroll.start();
 })
 overlay.addEventListener('click', function() {
@@ -443,6 +447,7 @@ overlay.addEventListener('click', function() {
   burger.classList.remove("active");
   header.classList.remove("active");
   headerClose.classList.remove("active");
+  document.documentElement.classList.remove("noscroll");
   scroll.start();
 })
 // end overlay
@@ -767,70 +772,116 @@ if (canwedoButtonOne && canwedoButtonTwo && canwedoButtonThree) {
 }
 // end canwedo__information
 
-// start terminals__information
-const terminalsButton = document.querySelector('.terminals__button');
-const terminalsButtonActive = document.querySelectorAll(".terminals__buttons .terminals__button");
-const terminalsButtonOne = document.querySelector('.terminals__button_one');
-const terminalsButtonTwo = document.querySelector('.terminals__button_two');
-const terminalsButtonThree = document.querySelector('.terminals__button_three');
-const terminalsButtonFour = document.querySelector('.terminals__button_four');
-const terminalsButtonFive = document.querySelector('.terminals__button_five');
-
-const terminalsinformationActive = document.querySelectorAll(".terminals__informations .terminals__information");
-const terminalsinformationOne = document.querySelector('.terminals__information_one');
-const terminalsinformationTwo = document.querySelector('.terminals__information_two');
-const terminalsinformationThree = document.querySelector('.terminals__information_three');
-const terminalsinformationFour = document.querySelector('.terminals__information_four');
-const terminalsinformationFive = document.querySelector('.terminals__information_five');
-
-if (terminalsButtonOne && terminalsButtonTwo && terminalsButtonThree) {
-  terminalsButtonOne.addEventListener('click', function() {
+// start hero__circle
+if (document.querySelector('.hero__circle')) {
+  const herocircle = document.querySelectorAll('.hero__circle');
+  const herocircles = [];
+  
+  const Mode = Object.freeze({
+    Idle: 1 << 0,
+    Move: 1 << 1,
+    Return: 1 << 2
+  });
+  
+  const update = () => {
+    for (const item of herocircles) {
+      if (item.mode !== Mode.Idle) {
+        item.position.x += item.velocity.x;
+        item.position.y += item.velocity.y;
+  
+        item.entity.style.setProperty('transform', `translate(${item.position.x}px, ${item.position.y}px)`);
+  
+        if (item.position.x !== 0 || item.position.y !== 0) {
+          if (item.mode === Mode.Move) {
+            item.velocity.x *= 0.96;
+            item.velocity.y *= 0.96;
+  
+            if (Math.abs(item.velocity.x) < 0.1 && Math.abs(item.velocity.y) < 0.1) {
+              [item.mouse.current.x, item.mouse.current.y] = [null, null];
+              [item.mouse.previous.x, item.mouse.previous.y] = [null, null];
+  
+              item.mode = Mode.Return;
+            }
+          } else {
+            [item.velocity.x, item.velocity.y] = [item.position.x / -10, item.position.y / -10];
+  
+            if (Math.abs(item.velocity.x) < 0.1 && Math.abs(item.velocity.y) < 0.1) {
+              [item.position.x, item.position.y] = [0, 0];
+              [item.velocity.x, item.velocity.y] = [0, 0];
+            }
+          }
+        } else {
+          item.mode = Mode.Idle;
+        }
+      }
+    }
     
-    if (!terminalsButtonOne.classList.contains("active")) {
-      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationOne.classList.add("active");
-      terminalsButtonOne.classList.add("active");
-    }
-  })
+    requestAnimationFrame(update);
+  };
   
-  terminalsButtonTwo.addEventListener('click', function() {
-    if (!terminalsButtonTwo.classList.contains("active")) {
-      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationTwo.classList.add("active");
-      terminalsButtonTwo.classList.add("active");
-    }
-  })
+  const init = () => {
+    for (const box of herocircle) {
+      const item = {
+        entity: box,
+        position: {
+          x: 0,
+          y: 0
+        },
+        velocity: {
+          x: 0,
+          y: 0
+        },
+        mouse: {
+          current: {
+            x: null,
+            y: null
+          },
+          previous: {
+            x: null,
+            y: null
+          }
+        },
+        mode: Mode.Idle
+      };
   
-  terminalsButtonThree.addEventListener('click', function() {
-    if (!terminalsButtonThree.classList.contains("active")) {
-      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationThree.classList.add("active");
-      terminalsButtonThree.classList.add("active");
-    }
-  })
+      box.addEventListener('mousemove', event => {
+        [item.mouse.current.x, item.mouse.current.y] = [event.offsetX, event.offsetY];
   
-  terminalsButtonFour.addEventListener('click', function() {
-    if (!terminalsButtonFour.classList.contains("active")) {
-      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationFour.classList.add("active");
-      terminalsButtonFour.classList.add("active");
+        if (item.mouse.previous.x !== null && item.mouse.previous.y !== null) {
+          item.velocity.x += (item.mouse.current.x - item.mouse.previous.x) / 50;
+          item.velocity.y += (item.mouse.current.y - item.mouse.previous.y) / 50;
+        }
+        
+        [item.mouse.previous.x, item.mouse.previous.y] = [item.mouse.current.x, item.mouse.current.y];
+        
+        item.mode = Mode.Move;
+      });
+      
+      box.addEventListener('mouseleave', event => {
+        [item.mouse.current.x, item.mouse.current.y] = [null, null];
+        [item.mouse.previous.x, item.mouse.previous.y] = [null, null];
+      });
+      
+      herocircles.push(item);
     }
-  })
-
-  terminalsButtonFive.addEventListener('click', function() {
-    if (!terminalsButtonFive.classList.contains("active")) {
-      terminalsButtonActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationActive.forEach((n) => n.classList.remove("active"));
-      terminalsinformationFour.classList.add("active");
-      terminalsButtonFive.classList.add("active");
-    }
-  })
+    
+    requestAnimationFrame(update);
+  };
+  
+  window.addEventListener('DOMContentLoaded', init);
+  
+  const herocirclesMouse = document.querySelector(".hero__circles");
+  window.addEventListener('mousemove', function(e) {
+    let x = e.clientX / window.innerWidth;
+    let y = e.clientY / window.innerHeight;
+    if(herocirclesMouse.children[0]){herocirclesMouse.children[0].style.transform = 'translate(-' + x * 5 + 'px, -' + y * 10 + 'px)'};
+    if(herocirclesMouse.children[1]){herocirclesMouse.children[1].style.transform = 'translate(-' + x * 15 + 'px, -' + y * 7 + 'px)'};
+    if(herocirclesMouse.children[2]){herocirclesMouse.children[2].style.transform = 'translate(-' + x * 3 + 'px, -' + y * 12 + 'px)'};
+    if(herocirclesMouse.children[3]){herocirclesMouse.children[3].style.transform = 'translate(-' + x * 17 + 'px, -' + y * 8 + 'px)'};
+    if(herocirclesMouse.children[4]){herocirclesMouse.children[4].style.transform = 'translate(-' + x * 14 + 'px, -' + y * 4 + 'px)'};
+  });
 }
-// end terminals__information
+// end hero__circle
 
 // start vacancies
 if(document.querySelector('.vacanc_info__item')) {

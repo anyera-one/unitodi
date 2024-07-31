@@ -30,6 +30,7 @@
   --orange: #ff9831;
   --error: #c01818;
   --green: #0a7146;
+  --ease: cubic-bezier(.22,.6,.36,1);
 }
 
 * {
@@ -122,7 +123,6 @@ button {
   background: transparent;
   -webkit-transition: color 0.15s linear, background-color 0.15s linear;
   transition: color 0.15s linear, background-color 0.15s linear;
-  /* cursor: pointer; */
   cursor: none;
 }
 
@@ -176,7 +176,6 @@ a {
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
   text-decoration: none;
-  /* cursor: pointer; */
   cursor: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -412,6 +411,13 @@ small {
 
 /* start button */
 
+.button__input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .button {
   display: inline-flex;
   padding: 8px 30px;
@@ -431,21 +437,24 @@ small {
   overflow: hidden;
 }
 
-.button:not(:disabled).active .button__hover {
+.button:not(:disabled).active .button__hover,
+.button__input:checked ~ .button:not(:disabled) .button__hover {
   -webkit-transform: translateY(0);
   transform: translateY(0);
   -webkit-transition-delay: .1s;
   transition-delay: .1s;
 }
 
-.button:not(:disabled).active .button__hover:after {
+.button:not(:disabled).active .button__hover:after,
+.button__input:checked ~ .button:not(:disabled) .button__hover:after {
   -webkit-transform: skew(0,-8deg);
   transform: skew(0,-8deg);
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
-.button:not(:disabled).active {
+.button:not(:disabled).active,
+.button__input:checked ~ .button:not(:disabled) {
   color: var(--white);
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
@@ -497,7 +506,8 @@ small {
   background-color: var(--color);
 }
 
-.button__color:not(:disabled).active {
+.button__color:not(:disabled).active,
+.button__input:checked ~ .button__color:not(:disabled) {
   color: var(--white);
   background-color: var(--color);
 }
@@ -513,7 +523,6 @@ small {
   -webkit-transition: background-color 0.15s linear, color 0.15s linear, border-color 0.15s linear;
   transition: background-color 0.15s linear, color 0.15s linear, border-color 0.15s linear;
   overflow: hidden;
-  /* cursor: pointer; */
   cursor: none;
 }
 
@@ -1127,7 +1136,6 @@ html.has-scroll-dragging {
   position: relative;
   top: 0;
   z-index: 10;
-  /* cursor: pointer; */
   cursor: none;
   color: var(--color);
  -webkit-transition: color 0.2s linear;
@@ -1712,6 +1720,7 @@ html.has-scroll-dragging {
   width: 55%;
   height: 100%;
   max-height: 770px;
+  position: relative;
 }
 
 .hero__image img {
@@ -1723,9 +1732,9 @@ html.has-scroll-dragging {
   background-color: var(--bg-gray);
 }
 
-.hero__head,
-.hero__desc,
-.hero__button {
+.swiper-slide .hero__head,
+.swiper-slide .hero__desc,
+.swiper-slide .hero__button {
   opacity: 0;
   -webkit-transform: translateY(30px);
   transform: translateY(30px);
@@ -1758,7 +1767,7 @@ html.has-scroll-dragging {
   transform: translateY(0);
 }
 
-.hero__image {
+.swiper-slide .hero__image {
   opacity: 0;
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
@@ -1837,6 +1846,87 @@ html.has-scroll-dragging {
 
 .hero__count {
   color: var(--text);
+}
+
+.hero__circles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero__circle {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  border-radius: 50%;
+  font-family: var(--text-font);
+  font-size: 31.46px;
+  font-weight: 700;
+  line-height: 44.05px;
+  letter-spacing: -0.025em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: transform 0.5s var(--ease);
+  transition: transform 0.5s var(--ease);
+}
+
+.hero__circle::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  mix-blend-mode: screen;
+  background-color: var(--purple);
+  border-radius: 50%;
+  background: linear-gradient(124.92deg, #F57A78 7%, #F94F63 25.1%, #B73CB7 50.03%, #7B5BDD 87.11%);
+  background-size: 400% 400%;
+  -webkit-animation: gradient-back 5s ease infinite;
+  animation: gradient-back 5s ease infinite;
+  overflow: hidden;
+}
+
+.hero__circles_mouse {
+  position: absolute;
+  z-index: 1;
+  -webkit-transition: transform 0.5s var(--ease);
+  transition: transform 0.5s var(--ease);
+}
+
+.hero__circles_mouse:nth-child(1) {
+  top: 0;
+  right: calc(50% - 260px);
+}
+
+.hero__circles_mouse:nth-child(2) {
+  top: calc(50% - 200px);
+  left: calc(50% - 250px);
+}
+
+.hero__circles_mouse:nth-child(3) {
+  top: calc(50% - 100px);
+  right: 100px;
+}
+
+.hero__circles_mouse:nth-child(4) {
+  top: calc(50% - 200px);
+  right: 0;
+}
+
+.hero__circles_mouse:nth-child(5) {
+  right: calc(50% - 250px);
+  bottom: calc(50% - 200px);
 }
 
 /* end hero */
@@ -3355,7 +3445,6 @@ html.has-scroll-dragging {
   border: 2px solid var(--text);
   -webkit-transition: border 0.15s linear;
   transition: border 0.15s linear;
-  cursor: pointer;
   -webkit-transform: translateY(3px);
   transform: translateY(3px);
 }
@@ -3436,7 +3525,6 @@ html.has-scroll-dragging {
   border-radius: 50%;
   -webkit-transition: border 0.15s linear;
   transition: border 0.15s linear;
-  cursor: pointer;
   -webkit-transform: translateY(3px);
   transform: translateY(3px);
 }
@@ -3672,6 +3760,125 @@ html.has-scroll-dragging {
   align-items: center;
 }
 
+.terminals__pulse_flex {
+  position: relative;
+  width: 330px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.terminals__pulse {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+}
+
+.terminals__pulse::after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 7%, #fff 25%, #fff 50%, #fff 90%);
+}
+
+.terminals__circles {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.terminals__bird {
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  background-color: var(--purple);
+  background: linear-gradient(124.92deg, #F57A78 7%, #F94F63 25.1%, #B73CB7 50.03%, #7B5BDD 87.11%);
+  background-size: 400% 400%;
+  border-radius: 50%;
+  -webkit-animation: gradient-back 5s ease infinite;
+  animation: gradient-back 5s ease infinite;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.terminals__circle {
+  r: 165;
+  cx: 165;
+  cy: 165;
+  stroke-width: 3px;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: scale(0.2);
+  transform: scale(0.2);
+  -webkit-animation: terminals-pulse 4s infinite;
+  animation: terminals-pulse 4s infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.terminals__circle:nth-child(1) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  stroke: var(--color);
+}
+
+.terminals__circle:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  stroke: var(--purple);
+}
+
+.terminals__circle:nth-child(3) {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  stroke: var(--coral);
+}
+
+.terminals__circle:nth-child(4) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  stroke: var(--pink);
+}
+
+@-webkit-keyframes terminals-pulse {
+  0% { 
+    opacity: 1;
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+  }
+  100% { 
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes terminals-pulse {
+  0% { 
+    opacity: 1;
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+  }
+  100% { 
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
 .terminals__head {
   max-width: 770px;
   padding: 15px 0 0;
@@ -3688,24 +3895,6 @@ html.has-scroll-dragging {
 
 .terminals__informations {
   padding: 30px 0;
-}
-
-.terminals__information {
-  display: block;
-  max-height: 0;
-  opacity: 0;
-  -webkit-transition: max-height 0s linear, opacity 0.2s linear;
-  transition: max-height 0s linear, opacity 0.2s linear;
-  -webkit-transition-delay: 0.2s, 0s;
-  transition-delay: 0.2s, 0s;
-  /* overflow: hidden; */
-}
-
-.terminals__information.active {
-  max-height: 100000px;
-  opacity: 1;
-  -webkit-transition-delay: 0.2s, 0.3s;
-  transition-delay: 0.2s, 0.3s;
 }
 
 .terminals__box {
@@ -3757,6 +3946,7 @@ html.has-scroll-dragging {
 
 .terminals_item__type {
   width: max-content;
+  max-width: 100%;
   margin: 20px 0 0;
   padding: 5px 10px;
   background-color: var(--bg-dgray);
@@ -3893,7 +4083,6 @@ html.has-scroll-dragging {
   transform: scale(1);
   -webkit-transition:  -webkit-transform 0.3s linear;
   transition: transform 0.3s linear;
-  cursor: pointer;
 }
 
 .terminal_card__img img{
@@ -4202,6 +4391,7 @@ html.has-scroll-dragging {
   margin: 1px 0;
   opacity: 1;
   border-bottom: 1px solid var(--border);
+  background-color: var(--bg);
 }
 
 .breadcrumbs__list {
@@ -4514,6 +4704,11 @@ html.has-scroll-dragging {
     gap: 90px;
   }
 
+  .hero__circle {
+    font-size: 31.46px;
+    line-height: 44.05px;
+  }
+
   .footer__nav_list {
     height: 115px;
     column-gap: 125px;
@@ -4641,6 +4836,11 @@ html.has-scroll-dragging {
   .globes__container,
   .vacanc_info__container {
     padding: 0 20px;
+  }
+
+  .hero__circle {
+    font-size: 24px;
+    line-height: 33.6px;
   }
 }
 /* end 1439px */
@@ -4826,7 +5026,11 @@ html.has-scroll-dragging {
   .swiper-button-prev,
   input,
   textarea,
-  label {
+  label,
+  .terminal_card__img,
+  .terminals_video__img,
+  .form__radio_check,
+  .form__checkbox_check {
     cursor: pointer;
   }
 
@@ -5410,9 +5614,6 @@ html.has-scroll-dragging {
   .terminals__block {
     padding: 120px 0 0;
   }
-  .terminals__img img {
-    width: 325px;
-  }
   .terminals__buttons {
     max-width: 700px;
     display: flex;
@@ -5946,9 +6147,6 @@ html.has-scroll-dragging {
     gap: 10px;
   }
 
-  .terminals__img img {
-    width: 350px;
-  }
   .terminals__block {
     padding: 40px 0 0;
   }
@@ -6190,17 +6388,19 @@ html.has-scroll-dragging {
 
 /* start animate */
 
-.animate_image img {
+.animate_image img,
+.terminals__pulse {
   opacity: 0;
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
-  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s linear;
-  transition: opacity 0.4s linear, transform 0.4s linear;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition: opacity 1s var(--ease), -webkit-transform 1s var(--ease);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
-.loaded .animate_image.animated img {
+.loaded .animate_image.animated img,
+.loaded .terminals__pulse.animated {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -6210,10 +6410,10 @@ html.has-scroll-dragging {
   opacity: 0;
   -webkit-transform: translateY(30px);
   transform: translateY(30px);
-  -webkit-transition: -webkit-transform 0.5s linear, opacity 0.25s linear;
-  transition: -webkit-transform 0.5s linear, opacity 0.25s linear;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition: -webkit-transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  transition: -webkit-transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .loaded .animate_top.animated {
@@ -6226,10 +6426,10 @@ html.has-scroll-dragging {
   opacity: 0;
   -webkit-transform: translateX(-30px);
   transform: translateX(-30px);
-  -webkit-transition: -webkit-transform 0.5s linear, opacity 0.25s linear;
-  transition: -webkit-transform 0.5s linear, opacity 0.25s linear;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition: -webkit-transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  transition: -webkit-transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .loaded .animate_left.animated {
@@ -6242,10 +6442,10 @@ html.has-scroll-dragging {
   opacity: 0;
   -webkit-transform: translateX(30px);
   transform: translateX(30px);
-  -webkit-transition: -webkit-transform 0.5s linear, opacity 0.25s linear;
-  transition: -webkit-transform 0.5s linear, opacity 0.25s linear;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition: -webkit-transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  transition: -webkit-transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .loaded .animate_right.animated {
