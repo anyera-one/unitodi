@@ -5481,8 +5481,155 @@ html.has-scroll-dragging {
   margin: 0 auto;
 }
 
-
 /* end software */
+
+/* start softwareCard */
+
+.hero__softCard .hero__block {
+  padding: 0px 0 110px;
+}
+
+.hero__softwareCard .small{
+  max-width: 700px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: var(--text-gray)
+}
+
+.hero__softwareCard ul li {
+  padding: 0 0 0 20px;
+  position: relative;
+}
+
+.hero__softwareCard ul li::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  background-color: var(--text-gray);
+}
+
+.hero__softwareCard .hero__back_line:nth-child(2)::before {
+  width: 26%;
+  left: 56%;
+}
+
+.softwareCard__container {
+  padding: 0 90px;
+}
+
+.softwareCard__block {
+  position: relative;
+  z-index: 4;
+}
+
+.softwareCard_info__title_right p{
+  color: var(--text-gray);
+}
+
+.softwareCard_info__description {
+  color: var(--text-gray);
+}
+
+.softwareCard_top,
+.softwareCard_info {
+  padding: 80px 0;
+}
+
+.softwareCard_info {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.softwareCard_top__title {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 0 0 0 10px;
+  gap: 15px;
+}
+
+.softwareCard_icons {
+  padding: 70px 0 0;
+  width: 100%;
+}
+
+.softwareCard_icons .terminals_icon {
+  width: calc(25% - 10px);
+}
+
+.softwareCard_info__wrapper_top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  padding: 0 10px;
+  gap: 20px;
+}
+
+.softwareCard_info__title,
+.softwareCard_info__subtitle {
+  width: calc(50% - 10px);
+}
+
+.softwareCard_info__wrapper_bottom { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 0;
+}
+
+.softwareCard_info__box {
+  width: 50%;
+}
+
+.softwareCard_info__description{
+  padding: 15px 10px 30px;
+}
+
+.softwareCard_info__list {
+  padding: 0 0 0 10px;
+}
+
+.softwareCard_info__item {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 16px;
+  position: relative;
+}
+
+.softwareCard_info__item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.softwareCard_info__item:nth-child(5n + 1)::before {
+  background-color: var(--purple);
+}
+
+.softwareCard_info__item:nth-child(5n + 2)::before {
+  background-color: var(--color);
+}
+
+.softwareCard_info__item:nth-child(5n + 3)::before {
+  background-color: var(--orange);
+}
+
+.softwareCard_info__item:nth-child(5n + 4)::before {
+  background-color: var(--coral);
+}
+
+/* end softwareCard */
 
 /* start 1919px */
 @media (max-width: 1919px) {
@@ -5609,7 +5756,8 @@ html.has-scroll-dragging {
   .vacancies__container,
   .globes__container,
   .vacanc_info__container,
-  .software__container {
+  .software__container,
+  .softwareCard__container {
     padding: 0 60px;
   }
 
@@ -5813,6 +5961,9 @@ html.has-scroll-dragging {
   .vacanc_info__item_text {
     padding: 30px 0 50px;
   }
+  .vacanc_info__item_descr .small {
+    font-style: 14px;
+  }
   .vacanc_info__title_wrapper {
     max-width: 100%;
     padding: 0 0 40px 10px;
@@ -5908,7 +6059,8 @@ html.has-scroll-dragging {
   .vacancies__container,
   .globes__container,
   .vacanc_info__container,
-  .software__container {
+  .software__container,
+  .softwareCard__container {
     padding: 0 20px;
   }
 }
@@ -7070,7 +7222,8 @@ html.has-scroll-dragging {
   .terminal_characteristic__container,
   .vacancies__container,
   .globes__container,
-  .software__container{
+  .software__container,
+  .softwareCard__container{
     padding: 0 10px;
   }
 
