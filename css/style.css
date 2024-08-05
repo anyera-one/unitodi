@@ -2520,7 +2520,7 @@ html.has-scroll-dragging {
 .hero__back_line:nth-child(2)::before {
   width: 15%;
   left: 62%;
-  background:linear-gradient(124.92deg, #F57A78 25.1%,  #B73CB7 87.11%);
+  background:linear-gradient(124.92deg, #F9007D 25.1%,  #B73CB7 87.11%);
   background-size: 400% 400%;
 }
 
@@ -2534,14 +2534,14 @@ html.has-scroll-dragging {
 .hero__back_line:nth-child(3)::before {
   width: 7%;
   left: 70%;
-  background:linear-gradient(124.92deg,  #F94F63 25.1%, #B73CB7 87.11%);
+  background:linear-gradient(124.92deg, #F57A78 25.1%, #F94F63 87.11%);
   background-size: 400% 400%;
 }
 
 .hero__back_line:nth-child(3)::after {
   width: 8%;
   left: 24%;
-  background:linear-gradient(124.92deg, #F57A78 25.1%, #F94F63 87.11%);
+  background:linear-gradient(124.92deg,  #F9007D 25.1%, #B73CB7 87.11%);
   background-size: 400% 400%;
 }
 
