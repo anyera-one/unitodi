@@ -2505,43 +2505,48 @@ html.has-scroll-dragging {
   top: 0;
   z-index: 1;
   background-color: var(--purple);
-  -webkit-animation: gradient-back 5s ease infinite;
-  animation: gradient-back 5s ease infinite;
+  -webkit-animation: gradient-back 3s ease infinite;
+  animation: gradient-back 3s ease infinite;
   clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
 }
 
 .hero__back_line:nth-child(1)::before {
   width: 11%;
   left: 63.7%;
-  background: linear-gradient(124.92deg, #F94F63 25.1%,  #7B5BDD 87.11%);
+  background: rgb(255,135,189);
+  background: linear-gradient(90deg, rgba(255,135,189,1) 5%, rgba(255,92,205,1) 35%, rgba(250,72,153,1) 53%, rgba(249,80,109,1) 80%, rgba(250,71,114,1) 100%);
   background-size: 400% 400%;
 }
 
 .hero__back_line:nth-child(2)::before {
   width: 15%;
   left: 62%;
-  background:linear-gradient(124.92deg, #F9007D 25.1%,  #B73CB7 87.11%);
+  background: rgb(130,42,203);
+  background: linear-gradient(90deg, rgba(130,42,203,1) 0%, rgba(153,68,224,1) 32%, rgba(150,118,249,1) 56%, rgba(148,113,254,1) 76%, rgba(136,107,224,1) 100%);
   background-size: 400% 400%;
 }
 
 .hero__back_line:nth-child(2)::after {
   width: 15%;
   left: 22%;
-  background:linear-gradient(124.92deg,  #F94F63 25.1%,  #7B5BDD 87.11%);
+  background: rgb(123,91,221);
+  background: linear-gradient(90deg, rgba(123,91,221,1) 0%, rgba(157,56,245,1) 24%, rgba(171,87,255,1) 63%, rgba(193,67,255,1) 83%, rgba(192,57,254,1) 100%);
   background-size: 400% 400%;
 }
 
 .hero__back_line:nth-child(3)::before {
   width: 7%;
   left: 70%;
-  background:linear-gradient(124.92deg,  #D74F8C  25.1%,  #F94F63  87.11%);
+  background: rgb(183,60,183);
+  background: linear-gradient(90deg, rgba(183,60,183,1) 1%, rgba(224,119,224,1) 42%, rgba(235,128,207,1) 66%, rgba(232,113,185,1) 81%, rgba(215,79,140,1) 100%);
   background-size: 400% 400%;
 }
 
 .hero__back_line:nth-child(3)::after {
   width: 8%;
   left: 24%;
-  background:linear-gradient(124.92deg,  #F9007D 25.1%, #B73CB7 87.11%);
+  background: rgb(249,79,162);
+  background: linear-gradient(90deg, rgba(249,79,162,1) 1%, rgba(255,107,160,1) 37%, rgba(255,120,136,1) 71%, rgba(255,103,121,1) 89%, rgba(249,79,99,1) 100%);
   background-size: 400% 400%;
 }
 
@@ -5528,10 +5533,7 @@ html.has-scroll-dragging {
   z-index: 4;
 }
 
-.softwareCard_info__title_right p{
-  color: var(--text-gray);
-}
-
+.softwareCard_info__subtitle p,
 .softwareCard_info__description {
   color: var(--text-gray);
 }
@@ -5585,10 +5587,11 @@ html.has-scroll-dragging {
 
 .softwareCard_info__box {
   width: 50%;
+  padding: 0 20px 0 0;
 }
 
 .softwareCard_info__description{
-  padding: 15px 10px 30px;
+  padding: 15px 0 30px 10px;
 }
 
 .softwareCard_info__list {
@@ -5606,11 +5609,9 @@ html.has-scroll-dragging {
   width: 6px;
   height: 6px;
   position: absolute;
-  top: 50%;
+  top: 8px;
   left: 0;
   border-radius: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .softwareCard_info__item:nth-child(5n + 1)::before {
@@ -5638,6 +5639,7 @@ html.has-scroll-dragging {
   }
   .border {
     width: calc(100% - 120px);
+    max-width: 100%;
   }
   h1,
   .hero__head {
@@ -5768,7 +5770,9 @@ html.has-scroll-dragging {
   .terminal_card__block,
   .terminal_characteristic__block,
   .vacancies_top,
-  .vacanc_info__block {
+  .vacanc_info__block,
+  .softwareCard_top, 
+  .softwareCard_info {
     padding: 60px 0;
   }
 
@@ -5990,7 +5994,62 @@ html.has-scroll-dragging {
   .software_top .terminals__box_name {
     max-width: 490px;
   }
-  
+
+  .hero__softwareCard .hero__back::before {
+    bottom: calc(-100vh + 138px);
+  }
+  .hero__softwareCard .hero__back_line:nth-child(1){
+    display: block;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(2)::before {
+    display: none;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(1) {
+    bottom: 139px;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(2),
+  .hero__softwareCard .hero__back_line:nth-child(3) {
+    bottom: 80px;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(1)::before {
+    width: 25%;
+    left: 53.5%;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(2)::after {
+    width: 18%;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(3)::before {
+    left: 72%;
+  }
+  .hero__softwareCard .hero__block {
+    padding: 0px;
+  }
+  .hero__softwareCard .hero__info {
+    width: 50%;
+  }
+  .hero__softwareCard .hero__image {
+    width: 50%;
+  }
+  .hero__softwareCard .small {
+    font-size: 18px;
+  }
+  .hero__softwareCard .hero__info {
+    padding: 70px 0 200px;
+  }
+  .softwareCard_top__title {
+    max-width: 580px;
+  }
+  .softwareCard_icons {
+    padding: 50px 0 0;
+  }
+  .softwareCard_icons .terminals_icon__text {
+    padding: 15px 30px 0 10px;
+  }
+  .softwareCard_info__head {
+    max-width: 640px;
+    font-size: 40px;
+    line-height: 49.6px;
+  }
 }
 /* end 1919px */
 
@@ -6615,6 +6674,10 @@ html.has-scroll-dragging {
     bottom: 253px;
     width: 190%;
   }
+  .hero__back::before {
+    -webkit-transform: rotate(-14deg);
+    transform: rotate(-14deg);
+  }
   .hero__back_line:nth-child(3)::before {
     width: 10%;
   }
@@ -7089,6 +7152,83 @@ html.has-scroll-dragging {
   .software__block .terminals__box_top{
     padding: 0 10px;
   }
+  .hero__back_line:nth-child(1)::before, 
+  .hero__back_line:nth-child(2)::before, 
+  .hero__back_line:nth-child(2)::after, 
+  .hero__back_line:nth-child(3)::before, 
+  .hero__back_line:nth-child(3)::after {
+    clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  }
+  .hero__softwareCard .hero__back_line:nth-child(1), 
+  .hero__softwareCard .hero__back_line:nth-child(2), 
+  .hero__softwareCard .hero__back_line:nth-child(3) {
+    height: 70px;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  .hero__softwareCard .hero__back::before {
+    bottom: calc(-100vh + 210px);
+  }
+  .hero__softwareCard .hero__back_line:nth-child(3) {
+    bottom: 216px;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(2)::after {
+    width: 17%;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(3)::before {
+    left: 55%;
+    width: 31%;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(1)::before {
+    width: 15%;
+    left: 78.5%;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(1) {
+    bottom: 130px;
+  }
+  .hero__softwareCard .hero__back_line:nth-child(2) {
+    bottom: 225px;
+  }
+  .hero__softwareCard .hero__flex {
+    align-items: center;
+  }
+  .hero__softwareCard .hero__info{
+    width: 100%;
+  }
+  .hero__softwareCard .hero__image{
+    width: 78%;
+  }
+  
+  .hero__software .hero__info {
+    padding: 40px 0 0;
+  }
+  .softwareCard_top__title {
+    max-width: 100%;
+  }
+  .softwareCard_icons .terminals_icon {
+    width: calc(50% - 10px);
+  }
+  .softwareCard_icons {
+    padding: 40px 0 0;
+  }
+  .softwareCard_info__head {
+    max-width: 100%;
+    margin-top: 15px;
+    font-size: 30px;
+    line-height: 37.2px;
+  }
+  .softwareCard_info__title, .softwareCard_info__subtitle {
+    width: 100%;
+  }
+  .softwareCard_info {
+    gap: 40px;
+  }
+  .softwareCard_info__box {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+
+
 
 }
 /* end 1280px */
@@ -7337,7 +7477,9 @@ html.has-scroll-dragging {
   }
   .canwedo__block,
   .terminal_card__block, 
-  .terminal_characteristic__block {
+  .terminal_characteristic__block,
+  .softwareCard_top,
+  .softwareCard_info {
     padding: 40px 0;
   }
   .canwedo__info {
@@ -7643,6 +7785,33 @@ html.has-scroll-dragging {
     gap: 20px;
     padding: 50px 0 40px;
   }
+
+  .hero__software .hero__info {
+    padding: 40px 0;
+  }
+  .hero__softwareCard .small { 
+    max-width: 100%;
+  }
+  .hero__softwareCard .hero__flex {
+    align-items: baseline;
+  }
+  .softwareCard_top__title {
+    max-width: 335px;
+  }
+  .hero__softwareCard .hero__image {
+    width: 100%;
+  }
+  .softwareCard_icons .terminals_icon {
+    width: 100%;
+  }
+  .softwareCard_icons .terminals_icon__subtitle {
+    margin: 20px 0 0;
+  }
+  .terminals_icons {
+    gap: 40px 0;
+    margin: 0;
+  }
+
 }
 /* end 767px */
 
@@ -7677,6 +7846,7 @@ html.has-scroll-dragging {
   .software__block {
     padding: 40px 0 20px;
   }
+  
 }
 /* end 460px */
 
@@ -7702,6 +7872,10 @@ html.has-scroll-dragging {
 
   .globes__right {
     height: 200px;
+  }
+
+  .hero__softwareCard .small { 
+    max-width: 335px;
   }
 }
 /* end 390px */
