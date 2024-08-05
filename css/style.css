@@ -2462,7 +2462,7 @@ html.has-scroll-dragging {
   height: 100vh;
   position: absolute;
   left: -50%;
-  bottom: calc(-100vh + 350px);
+  bottom: calc(-100vh + 275px);
   z-index: 1;
   background-color: var(--bg);
   -webkit-transform: rotate(-6deg);
@@ -2491,7 +2491,7 @@ html.has-scroll-dragging {
 }
 
 .hero__back_line:nth-child(3) {
-  bottom: 210px;
+  bottom: 211px;
 }
 
 .hero__back_line:nth-child(1)::before,
@@ -2511,8 +2511,8 @@ html.has-scroll-dragging {
 }
 
 .hero__back_line:nth-child(1)::before {
-  width: 10%;
-  left: 64.7%;
+  width: 11%;
+  left: 63.7%;
   background: linear-gradient(124.92deg, #F94F63 25.1%,  #7B5BDD 87.11%);
   background-size: 400% 400%;
 }
@@ -2534,7 +2534,7 @@ html.has-scroll-dragging {
 .hero__back_line:nth-child(3)::before {
   width: 7%;
   left: 70%;
-  background:linear-gradient(124.92deg, #F57A78 25.1%, #F94F63 87.11%);
+  background:linear-gradient(124.92deg,  #D74F8C  25.1%,  #F94F63  87.11%);
   background-size: 400% 400%;
 }
 
