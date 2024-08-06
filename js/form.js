@@ -84,7 +84,7 @@ for (i = 0; i < fbp.length; i++) {
 }
 // end form__button_pass
 
-// start faq form
+// start faq form and popup
 const faqform = document.getElementById('faq__form');
 
 if(faqform) {
@@ -93,6 +93,7 @@ if(faqform) {
   const faqphone = document.getElementById('faq__phone');
   const faqmessage = document.getElementById('faq__message');
   const faqcheckbox = document.getElementById('faq__checkbox');
+  const popup = document.getElementById('popup');
   const faqnameMin = faqname.getAttribute('minl');
   const faqnameMax = faqname.getAttribute('maxl');
   const faqemailMin = faqemail.getAttribute('minl');
@@ -195,8 +196,52 @@ if(faqform) {
         headers: {
           "Content-type": "application/json; charset=UTF-8"
         },
-      });
+      })
+      .then(() => {
+        faqname.value = ''
+        faqemail.value = ''
+        faqphone.value = ''
+        faqmessage.value = ''
+        faqcheckbox.checked = false
+        popup.classList.add('active')
+        document.documentElement.classList.add("noscroll");
+        
+
+      })
+      
+      
     }
   }
 }
+
+// if (popup) {
+//   popup.addEventListener('click', e => {
+//     if(e.target.classList.contains('popup__block')){
+//       popup.classList.remove('active')
+//       document.documentElement.classList.remove("noscroll");
+//     }
+//   });
+//   popup.addEventListener('touchend', e => {
+//     if(e.target.classList.contains('popup__block')){
+//       popup.classList.remove('active')
+//       document.documentElement.classList.remove("noscroll");
+//     }
+//   });
+
+//   document.querySelector('.popup__close').addEventListener('click', e => {
+//     popup.classList.remove('active')
+//     document.documentElement.classList.remove("noscroll");
+//   });
+
+//   document.getElementById('btnClose').addEventListener('click', e => {
+//     popup.classList.remove('active')
+//     document.documentElement.classList.remove("noscroll");
+//   });
+
+
+// }
+
+
+
+
 // end validate faqform
