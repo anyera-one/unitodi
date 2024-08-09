@@ -93,7 +93,7 @@ if(faqform) {
   const faqphone = document.getElementById('faq__phone');
   const faqmessage = document.getElementById('faq__message');
   const faqcheckbox = document.getElementById('faq__checkbox');
-  const popup = document.getElementById('popup');
+  const popup = document.getElementById('popup_sending');
   const faqnameMin = faqname.getAttribute('minl');
   const faqnameMax = faqname.getAttribute('maxl');
   const faqemailMin = faqemail.getAttribute('minl');
@@ -205,43 +205,31 @@ if(faqform) {
         faqcheckbox.checked = false
         popup.classList.add('active')
         document.documentElement.classList.add("noscroll");
-        
-
       })
-      
-      
     }
   }
+  if (popup) {
+    popup.addEventListener('click', e => {
+      if(e.target.classList.contains('popup_sending__block')){
+        popup.classList.remove('active')
+        document.documentElement.classList.remove("noscroll");
+      }
+    });
+    popup.addEventListener('touchend', e => {
+      if(e.target.classList.contains('popup_sending__block')){
+        popup.classList.remove('active')
+        document.documentElement.classList.remove("noscroll");
+      }
+    });
+    document.querySelector('.popup_sending__close').addEventListener('click', e => {
+      popup.classList.remove('active')
+      document.documentElement.classList.remove("noscroll");
+    });
+    document.getElementById('btnClose').addEventListener('click', e => {
+      popup.classList.remove('active')
+      document.documentElement.classList.remove("noscroll");
+    });
+  }
 }
-
-// if (popup) {
-//   popup.addEventListener('click', e => {
-//     if(e.target.classList.contains('popup__block')){
-//       popup.classList.remove('active')
-//       document.documentElement.classList.remove("noscroll");
-//     }
-//   });
-//   popup.addEventListener('touchend', e => {
-//     if(e.target.classList.contains('popup__block')){
-//       popup.classList.remove('active')
-//       document.documentElement.classList.remove("noscroll");
-//     }
-//   });
-
-//   document.querySelector('.popup__close').addEventListener('click', e => {
-//     popup.classList.remove('active')
-//     document.documentElement.classList.remove("noscroll");
-//   });
-
-//   document.getElementById('btnClose').addEventListener('click', e => {
-//     popup.classList.remove('active')
-//     document.documentElement.classList.remove("noscroll");
-//   });
-
-
-// }
-
-
-
 
 // end validate faqform
