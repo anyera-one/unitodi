@@ -785,24 +785,14 @@ if(partnerlist){
     if (document.querySelectorAll(".partner__item").length <= 1) {
       [...document.querySelectorAll('.partner__block')].map((n, i) => {
         let l = partnerlists[i].innerHTML;
-        n.querySelector('.partner__list').innerHTML = l + l + l + l + l + l + l + l + l + l + l + l + l + l + l + l + l + l
+        n.querySelector('.partner__list').innerHTML = l + l + l + l + l + l + l + l
       })
     } else if (document.querySelectorAll(".partner__item").length <= 2) {
       [...document.querySelectorAll('.partner__block')].map((n, i) => {
         let l = partnerlists[i].innerHTML;
-        n.querySelector('.partner__list').innerHTML = l + l + l + l + l + l + l + l + l
+        n.querySelector('.partner__list').innerHTML = l + l + l + l
       })
     } else if (document.querySelectorAll(".partner__item").length <= 3) {
-      [...document.querySelectorAll('.partner__block')].map((n, i) => {
-        let l = partnerlists[i].innerHTML;
-        n.querySelector('.partner__list').innerHTML = l + l + l + l + l + l
-      })
-    } else if (document.querySelectorAll(".partner__item").length <= 6) {
-      [...document.querySelectorAll('.partner__block')].map((n, i) => {
-        let l = partnerlists[i].innerHTML;
-        n.querySelector('.partner__list').innerHTML = l + l + l + l + l + l
-      })
-    } else if (document.querySelectorAll(".partner__item").length <= 11) {
       [...document.querySelectorAll('.partner__block')].map((n, i) => {
         let l = partnerlists[i].innerHTML;
         n.querySelector('.partner__list').innerHTML = l + l + l + l
