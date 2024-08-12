@@ -7993,10 +7993,10 @@ html.has-scroll-dragging {
     transform: rotate(335deg);
   }
   .globes__back_line:nth-child(1) {
-    top: 75px;
+    top: 86px;
   }
   .globes__back_line:nth-child(2) {
-    top: 111px;
+    top: 121px;
   }
   .globes__back_line:nth-child(1)::before,
   .globes__back_line:nth-child(2)::before,
