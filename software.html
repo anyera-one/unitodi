@@ -318,19 +318,7 @@
   </header>
   <main class="main" data-scroll-container>
     <div class="border"><span></span></div>
-    <section class="top" data-scroll-section id="top"><div class="border"><span></span></div></section> 
-    <section class="breadcrumbs" data-scroll-section>
-      <div class="container breadcrumbs__container">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item animate_top">
-            <a href="index.html" class="body_caption breadcrumbs__link">Главная</a>
-          </li>
-          <li class="breadcrumbs__item animate_top">
-            <a href="terminals.html" class="body_caption breadcrumbs__link">Программное обеспечение</a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <section class="top" data-scroll-section id="top"><div class="border"><span></span></div></section>
     <section class="hero hero__software" data-scroll-section>
       <div class="hero__back">
         <span class="hero__back_line"></span>
@@ -339,11 +327,18 @@
         <div class="border"><span></span></div>
       </div>
       <div class="container hero__container">
-      <div class="hero__block">
-        <div class="hero__slider">
-          <div class="hero__swiper swiper">
-            <div class="hero__wrapper swiper-wrapper">
-              <div class="hero__flex swiper-slide">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item animate_top">
+            <a href="index.html" class="body_caption breadcrumbs__link">Главная</a>
+          </li>
+          <li class="breadcrumbs__item animate_top">
+            <a href="terminals.html" class="body_caption breadcrumbs__link">Программное обеспечение</a>
+          </li>
+        </ul>
+        <div class="hero__block">
+          <div class="hero__slider">
+            <div class="hero__wrapper">
+              <div class="hero__flex">
                 <div class="hero__info">
                   <p class="hero__head">Разработка <span class="text_color">программного обеспечения</span></p>
                   <div class="hero__button">
@@ -358,26 +353,27 @@
                   </div>
                 </div>
                 <div class="hero__image">
-                  <img src="img/software/software_hero.webp" alt="">
+                  <div class="hero__circles hero__circles_js">
+                    <button class="hero__circles_mouse hero__circles_mouse_js active">
+                      <span class="hero__circle hero__circle_js">P8 Bio</span>
+                    </button>
+                    <button class="hero__circles_mouse hero__circles_mouse_js">
+                      <span class="hero__circle hero__circle_js">K 10</span>
+                    </button>
+                    <button class="hero__circles_mouse hero__circles_mouse_js">
+                      <span class="hero__circle hero__circle_js">MF 960</span>
+                    </button>
+                    <button class="hero__circles_mouse hero__circles_mouse_js">
+                      <span class="hero__circle hero__circle_js">R 90</span>
+                    </button>
+                    <button class="hero__circles_mouse hero__circles_mouse_js">
+                      <span class="hero__circle hero__circle_js">V 73</span>
+                    </button>
+                  </div>
+                  <div class="software__image_flex">
+                    <img src="img/software/software_hero.webp" alt="">
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="hero__navigation">
-            <div class="hero__counter body_one">
-              <span class="hero__count">01</span>/<span class="hero__total"></span>
-            </div>
-            <div class="hero__pagination swiper-pagination"></div>
-            <div class="hero__navigation_flex">
-              <div class="swiper-button-prev hero__prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M20.8477 23.6313L14.8542 16.9695L20.8477 10.2931L19.0026 8.24219L11.1508 16.9695L19.0026 25.6967L20.8477 23.6313Z" fill="currentColor"/>
-                </svg>
-              </div>
-              <div class="swiper-button-next hero__next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M11.1523 23.6313L17.1458 16.9695L11.1523 10.2931L12.9974 8.24219L20.8492 16.9695L12.9974 25.6967L11.1523 23.6313Z" fill="currentColor"/>
-                </svg>
               </div>
             </div>
           </div>
