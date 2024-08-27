@@ -1014,7 +1014,7 @@ if(maps) {
     if (!myMap) return;
     myMap = new ymaps.Map(myMap, {
       center: [55.660607, 37.538170],
-      zoom: 17, 
+      zoom: 14, 
       controls: []
       },{
       zoomControlPosition: { right: 0, top: 0 },

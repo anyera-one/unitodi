@@ -6390,6 +6390,10 @@ html.has-scroll-dragging {
   transform: rotate(45deg);
 }
 
+.map__yandex ymaps {
+  cursor: none !important;
+}
+
 .map__zoom {
   position: absolute;
   top: 50%;
