@@ -19,10 +19,11 @@ appHeight();
 
 // start language
 const language = document.querySelector('#language');
+const language_wrapper = document.querySelector('.header__language');
 const languageButtons = document.querySelectorAll('#RU, #EN');
 
-if (language) {
-  language.addEventListener('click', function() {
+if (language_wrapper) {
+  language_wrapper.addEventListener('click', function() {
     document.querySelector('.header__language_wrapper').classList.toggle('active');
   });
 }
