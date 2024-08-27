@@ -2044,7 +2044,6 @@ html.has-scroll-dragging {
   box-shadow: 0px 4px 26.5px 0px #DCDCDC1A;
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
-  overflow: hidden;
 }
 
 .header__progress {
@@ -2086,6 +2085,49 @@ html.has-scroll-dragging {
   gap: 20px;
   position: relative;
   z-index: 20;
+}
+
+.header__btn_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  position: relative;
+}
+
+.header__language svg{
+  transform: rotate(90deg)
+}
+
+.header__language_wrapper {
+  display: flex;  
+  flex-direction: column;  
+  gap: 10px;
+  max-height: 0;
+  width: 140px;
+  background:  #FFFFFF;
+  position: absolute;
+  top: 40px;
+  overflow: hidden;
+  -webkit-transition: max-height 1s;
+  transition: max-height 1s;
+  z-index: 5;
+}
+
+.header__language_wrapper.active{
+  max-height: 100px;
+  border: 1px solid #F0F0F4;
+}
+
+.header__language_wrapper span:nth-child(1) {
+  padding: 10px 15px 0;
+}
+
+.header__language_wrapper span:nth-child(2) {
+  padding: 0 15px 10px;
+}
+
+.header__language_wrapper span:hover {
+  color: #949494;
 }
 
 .header__navigation {
@@ -6560,6 +6602,10 @@ html.has-scroll-dragging {
     padding: 15px 60px;
   }
 
+  .header__btn_wrapper {
+    gap: 40px;
+  }
+  
   .header__nav_left .header__nav_scroll {
     padding: 30px 10px;
   }
@@ -7429,7 +7475,7 @@ html.has-scroll-dragging {
     height: 80px;
     padding: 20px 0;
   }
-  .header__btn {
+  .header__btn{
     display: none;
   }
   .header__burger {
@@ -7622,6 +7668,9 @@ html.has-scroll-dragging {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
+  }
+  .header__language_wrapper {
+    width: 100px;
   }
   .header__nav_item {
     opacity: 0;
@@ -8614,6 +8663,9 @@ html.has-scroll-dragging {
     width: 100%;
   }
 
+  .header__btn_wrapper {
+    gap: 30px;
+  }
   .header__navigation {
     max-width: 340px;
   }

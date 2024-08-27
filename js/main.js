@@ -17,6 +17,24 @@ window.addEventListener('resize', appHeight);
 appHeight();
 // end height
 
+// start language
+const language = document.querySelector('#language');
+const languageButtons = document.querySelectorAll('#RU, #EN');
+
+if (language) {
+  language.addEventListener('click', function() {
+    document.querySelector('.header__language_wrapper').classList.toggle('active');
+  });
+}
+
+languageButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    language.innerText = this.id === 'RU' ? 'Ru' : 'En';
+    document.querySelector('.header__language_wrapper').classList.remove('active'); 
+  });
+});
+// end language
+
 // start scroll
 scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth:true,getDirection: true,scrollFromAnywhere: true,breakpoint: 0,inertia: 1.7,mobile: {breakpoint: 0,smooth: false,inertia: 0,},tablet: {breakpoint: 0,smooth: false,inertia: 1.7,},smartphone: {breakpoint: 0,smooth: false,inertia: 1.7,}})
 // scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true,getDirection: true,scrollFromAnywhere: true,breakpoint: 0,inertia: 0,tablet: {breakpoint: 0,smooth: false,inertia: 0,}})
